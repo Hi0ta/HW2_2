@@ -15,9 +15,6 @@ public class Car {
             this.remoteEngineStart = remoteEngineStart;
             this.keylessAccess = keylessAccess;
         }
-        /*public Key(){
-            this(false,false);
-        }*/
         public boolean isRemoteEngineStart() {return remoteEngineStart;}
         public boolean isKeylessAccess() {return keylessAccess;}
     }
@@ -36,24 +33,18 @@ public class Car {
             } else {
                 this.costOfInsurance = costOfInsurance;
             }
-            if (insuranceNumber == null || insuranceNumber.isEmpty() || insuranceNumber.isBlank()) {
+            if(insuranceNumber.length() != 9 ) {
+                this.insuranceNumber = "введен некорректный номер страховки!";
+            } else if (insuranceNumber == null || insuranceNumber.isEmpty() || insuranceNumber.isBlank()) {
                 this.insuranceNumber = "123456789";
             } else {
                 this.insuranceNumber = insuranceNumber;
             }
         }
-       /* public Insurance(){
-           this(LocalDate.now(), 0.00, "123456789");
-        }*/
         public LocalDate getInsuranceValidityPeriod() {return insuranceValidityPeriod;}
         public double getCostOfInsurance() {return costOfInsurance;}
         public String getInsuranceNumber() {return insuranceNumber;}
 
-        public void checkInsuranceNumber(){
-            if(insuranceNumber.length() != 9 ) {
-                System.out.println("Номер страховки некорректный!");
-            }
-        }
         public void checkValidityOfInsurancel() {
             if (insuranceValidityPeriod.isBefore(LocalDate.now())
                || insuranceValidityPeriod.isEqual(LocalDate.now())){
@@ -72,8 +63,8 @@ public class Car {
     private String registrationNumber;
     private final int numberOfSeats;
     private String tireSign;
-     Key key;
-     Insurance insurance;
+    private Key key;
+    private Insurance insurance;
 
     public Car(String brand,
                String model,

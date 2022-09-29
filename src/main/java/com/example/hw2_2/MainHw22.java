@@ -163,11 +163,6 @@ public class MainHw22 {
     bmw.infoSignal();
     kia.infoSignal();
     hyundai.infoSignal();
-    lada.getInsurance().checkInsuranceNumber();
-    audi.getInsurance().checkInsuranceNumber();
-    bmw.getInsurance().checkInsuranceNumber();
-    kia.getInsurance().checkInsuranceNumber();
-    hyundai.getInsurance().checkInsuranceNumber();
 
     lada.getInsurance().checkValidityOfInsurancel();
     audi.getInsurance().checkValidityOfInsurancel();
